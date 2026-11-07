@@ -23,7 +23,7 @@ int main(){
 		
 		switch(opcao){
 			case 1: 
-				cadastrarJogador(jogadores, &totalJogadores, max_jgdr); 
+				totalJogadores = cadastrarJogador(jogadores, totalJogadores, max_jgdr); 
 				break;
 			case 2:
 				playerOne = escolherJogador(jogadores, totalJogadores);

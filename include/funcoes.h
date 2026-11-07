@@ -12,7 +12,7 @@ void imprimeMenu();
 
 int capturaOpcao();
 
-void cadastrarJogador(Jogador jogadores[], int *tamanho, int maximo);
+int cadastrarJogador(Jogador jogadores[], int totalJogadores, int maximo);
 
 int escolherJogador(Jogador jogadores[], int tamanho);
 

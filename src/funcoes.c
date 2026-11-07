@@ -45,26 +45,27 @@ int capturaOpcao(){
 	return opcao;
 }
 
-void cadastrarJogador(Jogador jogadores[], int *tamanho, int maximo){
+int cadastrarJogador(Jogador jogadores[], int totalJogadores, int maximo){
 	limparTela();
 	printf("=========== Cadastro de jogador ===========\n");
-	if (*tamanho >= maximo) {
+	if (totalJogadores >= maximo) {
 		printf("Numero maximo de jogadores atingido.\n");
 		voltarMenu();
-		return;
+		return totalJogadores;
 	}
+	int i = totalJogadores;
 	printf("Digite o nome do jogador: ");
-	fgets(jogadores[*tamanho].nome, sizeof(jogadores[*tamanho].nome), stdin);
-	jogadores[*tamanho].nome[strcspn(jogadores[*tamanho].nome, "\n")] = '\0';
-	jogadores[*tamanho].respondidas = 0;
-	jogadores[*tamanho].acertos = 0;
-	jogadores[*tamanho].percentual = 0;
-	(*tamanho)++;
-	int i = *tamanho;
-	salvarJogador(jogadores, i);
+	fgets(jogadores[i].nome, sizeof(jogadores[i].nome), stdin);
+	jogadores[i].nome[strcspn(jogadores[i].nome, "\n")] = '\0';
+	jogadores[i].respondidas = 0;
+	jogadores[i].acertos = 0;
+	jogadores[i].percentual = 0;
+	
+	totalJogadores++;
+	salvarJogador(jogadores, totalJogadores);
 	printf("Jogador salvo com sucesso!\n");
 	voltarMenu();
-	return;
+	return totalJogadores;
 }
 
 int escolherJogador(Jogador jogadores[], int tamanho){
