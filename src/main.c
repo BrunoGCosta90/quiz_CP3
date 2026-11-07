@@ -35,7 +35,11 @@ int main(){
 				jogar(perguntas,jogadores, playerOne, totalJogadores, totalPerguntas);
 				break;
 			case 5:
+				estatisticas(jogadores, totalJogadores);
+				break;
 			case 6:
+				rankingGeral(jogadores, totalJogadores);
+				break;
 			case 7: 
 				continua = 0;
 				printf("Saindo...\n");

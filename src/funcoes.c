@@ -69,6 +69,15 @@ int cadastrarJogador(Jogador jogadores[], int totalJogadores, int maximo){
 	return totalJogadores;
 }
 
+void imprimeJogadores(Jogador jogadores[], int totalJogadores){
+	printf("========================================================\n");
+	int i;
+	for (i = 0; i < totalJogadores; i++){
+		printf("|%d. %-50s |\n", i+1, jogadores[i].nome);
+	}
+	printf("========================================================\n");
+}
+
 int escolherJogador(Jogador jogadores[], int tamanho){
 	limparTela();
 	printf("=============== Escolha quem ira jogar =================\n");
@@ -77,12 +86,7 @@ int escolherJogador(Jogador jogadores[], int tamanho){
 		voltarMenu();
 		return;
 	}
-	printf("========================================================\n");
-	int i;
-	for (i = 0; i < tamanho; i++){
-		printf("|%d. %-50s |\n", i+1, jogadores[i].nome);
-	}
-	printf("========================================================\n");
+	imprimeJogadores(jogadores, tamanho);
 	printf("Escolha o jogador com o numero correspondente: ");
 	int escolha;
 	scanf("%d", &escolha);
@@ -139,15 +143,7 @@ int cadastrarPergunta(Pergunta perguntas[], int totalPerguntas, int maximo){
 	perguntas[i].altD[strcspn(perguntas[i].altD, "\n")] = '\0';
 	printf("Alternativa correta (A, B, C, ou D): ");
 	char alt = alternativa();
-//	scanf(" %c", &alternativa);
-//	alternativa = toupper(alternativa);
-//	limpaBuffer();
-//	while (alternativa != 'A' && alternativa != 'B' && alternativa != 'C' && alternativa != 'D') {
-//		printf("Alternativa invalida, digite A, B, C ou D): ");
-//		scanf(" %c", &alternativa);
-//		alternativa = toupper(alternativa);
-//		limpaBuffer();
-//	}
+
 	perguntas[i].correta[0] = alt;
 	perguntas[i].correta[1] = '\0';
 	
@@ -220,4 +216,58 @@ void jogar(Pergunta perguntas[], Jogador jogadores[], int jogador, int totalJoga
 	
 	salvarJogador(jogadores, totalJogadores);
 	voltarMenu();
+}
+
+void estatisticas(Jogador jogadores[], int totalJogadores){
+	limparTela();
+	printf("============== Estatisticas do jogador =================\n");
+	int continua = 1;
+	int jogador;
+	
+	while (continua == 1){
+		
+		
+		imprimeJogadores(jogadores, totalJogadores);
+		printf("Escolha um jogador digitando o numero corresponde para exibir estatisticas ou digite 0 para voltar ao menu principal: ");
+		scanf("%d", &jogador);
+		limpaBuffer();
+		limparTela();
+		if (jogador == 0){
+			limparTela();
+			return;
+		}
+		printf("============== Estatisticas do jogador =================\n");
+		if(jogador > 0 && jogador <= totalJogadores){
+			printf("\n========================================================\n");
+			printf("Nome: %s\n", jogadores[jogador-1].nome);
+			printf("Respondidas: %d\n", jogadores[jogador-1].respondidas);
+			printf("Acertos: %d\n", jogadores[jogador-1].acertos);
+			printf("Erros: %d\n", jogadores[jogador-1].respondidas - jogadores[jogador-1].acertos);
+			printf("Percentual: %.2lf%%\n", jogadores[jogador-1].percentual);
+			printf("========================================================\n\n");
+		}
+	}
+}
+
+void rankingGeral(Jogador jogadores[], int totalJogadores){
+	limparTela();
+	int i, j;
+	for (i = 0; i < totalJogadores; i++){
+		for (j = 0; j < totalJogadores - 1; j++){
+			if (jogadores[j].percentual < jogadores[j+1].percentual){
+				Jogador temp = jogadores[j];
+				jogadores[j] = jogadores[j+1];
+				jogadores[j+1] = temp;
+			}
+		}
+	}
+	
+	printf("========================= Ranking geral ===========================\n");
+	for (i = 0; i < totalJogadores; i++){
+		printf("| %d. %-50s | %6.2lf%% |\n", i+1, jogadores[i].nome, jogadores[i].percentual);
+		printf("|-----------------------------------------------------------------|\n");
+	}
+	printf("===================================================================\n");
+	voltarMenu();
+	return;
 }

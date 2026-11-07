@@ -6,19 +6,17 @@ O objetivo deste projeto foi criar um quiz com registro de perguntas, jogadores 
 
 ## Sobre o projeto
 
-O projeto foi criado para a disciplina de Algoritmos e Pensamento Computacional, 2º semestre, noturno, Centro Universitário Braz Cubas.
+O projeto foi criado para a disciplina de Algoritmos e Pensamento Computacional, 2º semestre, noturno, 2026, Centro Universitário Braz Cubas.
 
 ---
 
 ## Funcionalidades
 
-- [x]
-- [x]
-- [x]
-- [x]
-- [x]
-- [x]
-- [x]
+- [x] Cadastro de jogadores (limite configurável via código)
+- [x] Escolher jogador que irá jogar
+- [x] Cadastrado de perguntas (limite configurável via código)
+- [x] Estatísticas de cada jogador
+- [x] Ranking geral ordenado do melhor para o pior
 
 ---
 
