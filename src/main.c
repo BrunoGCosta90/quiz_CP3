@@ -2,15 +2,14 @@
 #include "funcoes.h"
 #include "modulo.h"
 #define max_pergunta 10
-#define max_jgdr 5
+#define max_jogador 5
 
 int main(){
 	Pergunta perguntas[max_pergunta];
 	int totalPerguntas = carregarPerguntas(perguntas, max_pergunta);
 	
-	Jogador jogadores[max_jgdr];
-	int totalJogadores = carregarJogadores(jogadores, max_jgdr);
-	//printf("%d", totalJogadores);
+	Jogador jogadores[max_jogador];
+	int totalJogadores = carregarJogadores(jogadores, max_jogador);
 	
 	int playerOne = -1;
 	
@@ -23,7 +22,7 @@ int main(){
 		
 		switch(opcao){
 			case 1: 
-				totalJogadores = cadastrarJogador(jogadores, totalJogadores, max_jgdr); 
+				totalJogadores = cadastrarJogador(jogadores, totalJogadores, max_jogador); 
 				break;
 			case 2:
 				playerOne = escolherJogador(jogadores, totalJogadores);

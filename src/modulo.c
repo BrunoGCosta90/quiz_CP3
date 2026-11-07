@@ -67,38 +67,6 @@ int carregarJogadores(Jogador jogadores[], int maximo){
 	return i;
 }
 
-//int carregarJogadores(Jogador jogadores[], int maximo){
-//	FILE *arquivo = fopen("data/historico.txt", "r");
-//	
-//	if(arquivo == NULL) {
-//		return 0;
-//	}
-//	
-//	char linha[256];
-//	int i = 0;
-//	
-//	// Lê o arquivo linha por linha com segurança
-//	while (i < maximo && fgets(linha, sizeof(linha), arquivo) != NULL) {
-//		// Remove a quebra de linha do final da linha lida
-//		linha[strcspn(linha, "\r\n")] = '\0';
-//		
-//		// Se a linha estiver vazia, pula para a próxima
-//		if (strlen(linha) == 0) continue;
-//		
-//		// Extrai os campos separados por ponto e vírgula
-//		if (sscanf(linha, "%49[^;];%d;%d;%lf",
-//				jogadores[i].nome,
-//				&jogadores[i].respondidas,
-//				&jogadores[i].acertos,
-//				&jogadores[i].percentual) == 4) {
-//			i++;
-//		}
-//	}
-//	
-//	fclose(arquivo);
-//	return i;
-//}
-
 void salvarJogador(Jogador jogadores[], int tamanho) {
 	FILE *arquivo = fopen("data/historico.txt", "w");
 	
