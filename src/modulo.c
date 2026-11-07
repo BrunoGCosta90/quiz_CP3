@@ -10,7 +10,7 @@ int carregarPerguntas(Pergunta perguntas[], int maximo){
 	}
 	
 	int i = 0;
-	while (i < maximo && fscanf(arquivo, "%199[^;];%49[^;];%49[^;];%49[^;];%49[^;];%c", 
+	while (i < maximo && fscanf(arquivo, "%199[^;];%49[^;];%49[^;];%49[^;];%49[^;];%1s\n", 
 			perguntas[i].enunciado,
 			perguntas[i].altA,
 			perguntas[i].altB,
@@ -34,7 +34,7 @@ void salvarPergunta(Pergunta perguntas[], int tamanho){
 	
 	int i;
 	for (i = 0; i < tamanho; i++) {
-		fprintf(arquivo, "%s;%s;%s;%s;%s;%c\n",
+		fprintf(arquivo, "%s;%s;%s;%s;%s;%s\n",
 				perguntas[i].enunciado,
 				perguntas[i].altA,
 				perguntas[i].altB,

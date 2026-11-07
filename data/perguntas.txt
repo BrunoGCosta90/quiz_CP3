@@ -1,0 +1,4 @@
+Qual a capital do Brasil?;SP;Brasilia;Rio de Janeiro;Belo Horizonte;B
+Qual o maior pais do mundo?;Russia;China;EUA;Canada;A
+Qual o menor pais do mundo?;Vaticano;Monaco;Nauru;Tuvalu;A
+Qual o pais mais visitado do mundo?;Espanha;EUA;Italia;Franca;D
