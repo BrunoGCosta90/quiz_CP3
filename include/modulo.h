@@ -7,7 +7,7 @@ typedef struct {
 	char altB[50];
 	char altC[50];
 	char altD[50];
-	char correta[];
+	char correta[2];
 } Pergunta;
 
 typedef struct {

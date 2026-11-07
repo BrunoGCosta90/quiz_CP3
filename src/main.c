@@ -12,6 +12,8 @@ int main(){
 	int totalJogadores = carregarJogadores(jogadores, max_jgdr);
 	//printf("%d", totalJogadores);
 	
+	int playerOne;
+	
 	int continua = 1;
 	
 	while (continua == 1){
@@ -20,8 +22,12 @@ int main(){
 		int opcao = capturaOpcao();
 		
 		switch(opcao){
-			case 1: cadastrarJogador(jogadores, &totalJogadores, max_jgdr); break;
+			case 1: 
+				cadastrarJogador(jogadores, &totalJogadores, max_jgdr); 
+				break;
 			case 2:
+				playerOne = escolherJogador(jogadores, totalJogadores);
+				break;
 			case 3:
 			case 4:
 			case 5:
