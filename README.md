@@ -6,16 +6,16 @@ O objetivo deste projeto foi criar um quiz com registro de perguntas, jogadores 
 
 ## Sobre o projeto
 
-O projeto foi criado para a disciplina de Algoritmos e Pensamento Computacional, 2∫ semestre, noturno, 2026, Centro Universit·rio Braz Cubas.
+O projeto foi criado para a disciplina de Algoritmos e Pensamento Computacional, 2¬∫ semestre, noturno, 2026, Centro Universit√°rio Braz Cubas.
 
 ---
 
 ## Funcionalidades
 
-- [x] Cadastro de jogadores (limite configur·vel via cÛdigo)
-- [x] Escolher jogador que ir· jogar
-- [x] Cadastrado de perguntas (limite configur·vel via cÛdigo)
-- [x] EstatÌsticas de cada jogador
+- [x] Cadastro de jogadores (limite configur√°vel via c√≥digo)
+- [x] Escolher jogador que ir√° jogar
+- [x] Cadastrado de perguntas (limite configur√°vel via c√≥digo)
+- [x] Estat√≠sticas de cada jogador
 - [x] Ranking geral ordenado do melhor para o pior
 
 ---
@@ -27,22 +27,22 @@ O projeto foi criado para a disciplina de Algoritmos e Pensamento Computacional,
 * **IDE Dev-C++ 5.11**
 ---
 
-## PrÈ-requisitos
+## Pr√©-requisitos
 
 * Compilador C (como **GCC** ou **Clang**)
 * Terminal de comando ou Prompt/PowerShell
 
 ---
 
-## CompilaÁ„o
+## Compila√ß√£o
 
 gcc -Wall -Wextra -Iinclude src/main.c src/funcoes.c src/modulo.c -o programa
 
 ---
 
-## VÌdeo de demonstraÁ„o
+## V√≠deo de demonstra√ß√£o
 
-
+https://youtu.be/TXdlpv6BmTI
 
 ---
 
